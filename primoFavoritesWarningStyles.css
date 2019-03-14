@@ -1,0 +1,26 @@
+/****************************Styles for customizing fav warnings**********************/
+/* id for customizing the alert bar on favorites page */
+#fav-bar {
+	/*background-color: tomato;*/
+}
+/* id for cusomizing the text in the fav warning bar on favorites page*/
+#fav-bar-text {	
+
+}
+/* id for customizing the header box of the fav warning pop-up modal*/
+#fav-modal-header{
+	/*background-color: tomato;*/
+}
+/* id for customizing text and font attributes in fav warning pop-up modal header*/
+#fav-modal-header-text {	
+	/*padding-top: 10px;*/
+}
+/* id for customizing modal content box below modal header */
+#fav-modal-content {
+	/*background-color: tomato;*/
+}	
+/* id for customizing modal content text below header*/
+#fav-modal-content-text {
+	/*font-size: 10px;*/
+}
+
