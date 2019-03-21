@@ -27,9 +27,15 @@ app.value('globalFavVars', {
 app.controller('prmFavoritesToolBarAfterCtrl', function($scope, $rootScope, favSession, globalFavVars) {
 	$scope.favWarning = favSession.getData();
 	if($scope.favWarning === null){
-		favSession.setData(globalFavVars.enableFavWarningBar);
-		$scope.favWarning = favSession.getData();
-	};
+		if(globalFavVars.enableFavWarningBar === 'false' && globalFavVars.enableFavModal === 'false'){
+			favSession.setData('false');
+			$scope.favWarning = favSession.getData();
+		}
+		else {
+			favSession.setData('true');
+			$scope.favWarning = favSession.getData();
+		}
+	}
 	$scope.favWarningOnClick = function(){
 		favSession.setData('false');
 		$scope.favWarning = favSession.getData();
@@ -99,24 +105,30 @@ app.controller('prmSaveToFavoritesButtonAfterCtrl', function($scope, $mdDialog, 
 	$scope.status = ' ';
 	$scope.customFullscreen = false;
 	$scope.favWarning = favSession.getData();
-		if($scope.favWarning === null){
-			favSession.setData(globalFavVars.enableFavModal);
+	if($scope.favWarning === null){
+		if(globalFavVars.enableFavWarningBar === 'false' && globalFavVars.enableFavModal === 'false'){
+			favSession.setData('false');
 			$scope.favWarning = favSession.getData();
-		};
-		
-		let rootScope = $scope.$root;
-	  	let uSMS=rootScope.$$childHead.$ctrl.userSessionManagerService;
-	  	let jwtData = uSMS.jwtUtilService.getDecodedToken();
-		if(jwtData.userGroup === "GUEST"){
-			$scope.isLoggedIn = 'false';
 		}
 		else {
-			$scope.isLoggedIn = 'true';
+			favSession.setData('true');
+			$scope.favWarning = favSession.getData();
 		}
+	}
 		
-		if($scope.favWarning === 'true' && $scope.isLoggedIn === 'false' && globalFavVars.enableFavModal === 'true'){
-			$rootScope.view = true;
-		}
+	let rootScope = $scope.$root;
+	let uSMS=rootScope.$$childHead.$ctrl.userSessionManagerService;
+	let jwtData = uSMS.jwtUtilService.getDecodedToken();
+	if(jwtData.userGroup === "GUEST"){
+		$scope.isLoggedIn = 'false';
+	}
+	else {
+		$scope.isLoggedIn = 'true';
+	}
+		
+	if($scope.favWarning === 'true' && $scope.isLoggedIn === 'false' && globalFavVars.enableFavModal === 'true'){
+		$rootScope.view = true;
+	}
 	
 	$scope.favWarnModalHoverDisplay = globalFavVars.favWarnModalHoverText;
 	
