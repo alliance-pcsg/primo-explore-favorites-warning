@@ -45,7 +45,7 @@ app.controller('prmFavoritesToolBarAfterCtrl', function($scope, $rootScope, favS
 		$scope.isLoggedIn = 'true';
 	}
 	
-	if($scope.favWarning == 'true' && $scope.isLoggedIn == 'false'){
+	if($scope.favWarning === 'true' && $scope.isLoggedIn === 'false' && globalFavVars.enableFavWarningBar === 'true'){
 		$rootScope.view = true;
 	}
 	$scope.favWarningBarText = globalFavVars.favWarnBarTxt;
@@ -114,7 +114,7 @@ app.controller('prmSaveToFavoritesButtonAfterCtrl', function($scope, $mdDialog, 
 			$scope.isLoggedIn = 'true';
 		}
 		
-		if($scope.favWarning == 'true' && $scope.isLoggedIn == 'false'){
+		if($scope.favWarning === 'true' && $scope.isLoggedIn === 'false' && globalFavVars.enableFavModal === 'true'){
 			$rootScope.view = true;
 		}
 	
