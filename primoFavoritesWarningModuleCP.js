@@ -9,23 +9,15 @@ angular
 	favWarnModalTitleText: 'Sign in to make your favorites list permanent',
 	favWarnModalHoverText: 'Add to my favorites',
 	favWarnModalContentText: 'You can create a favorites list as a Guest, but to save a list permanently you must be signed in.',
-	enableFavWarningBar: 'true', //set to 'false' to keep the warning bar on the favorites page from showing
-	enableFavModal: 'true' //set to 'false' to keep the overlay in the results list from being used (turns of modal pop-up)
 })
 .controller('prmFavoritesToolBarAfterCtrl', function($scope, $rootScope, favSession, globalFavVars) {
 	$scope.favWarning = favSession.getData();
 	/*Upon initialization of the app the favSession value will be null, so we need to give it a value
 	based on global variables set by the institution in their custom.js file*/
 	if($scope.favWarning === null){
-		if(globalFavVars.enableFavWarningBar === 'false' && globalFavVars.enableFavModal === 'false'){
-			favSession.setData('false');
-			$scope.favWarning = favSession.getData();
-		}
-		else {
 			favSession.setData('true');
 			$scope.favWarning = favSession.getData();
 		}
-	};
 	/*Use the favWarningOnClick function to stop favorites warnings from appearing when dismiss button is clicked*/
 	$scope.favWarningOnClick = function(){
 		favSession.setData('false');
@@ -42,8 +34,8 @@ angular
 	else {
 		$scope.isLoggedIn = 'true';
 	}
-	/*Set the rootScope view variable depending on session data, if the user is logged in, and if the institution has enabled the functionality*/ 
-	if($scope.favWarning === 'true' && $scope.isLoggedIn === 'false' && globalFavVars.enableFavWarningBar === 'true'){
+	/*Set the rootScope view variable depending on session data and if the user is logged in*/ 
+	if($scope.favWarning === 'true' && $scope.isLoggedIn === 'false'){
 		$rootScope.view = true;
 	}
 	$scope.favWarningBarText = globalFavVars.favWarnBarTxt;  //Variable for storing institution's custom text to display in warning bar
@@ -95,15 +87,10 @@ angular
 	/*Upon initialization of the app the favSession value will be null, so we need to give it a value
 	based on global variables set by the institution in their custom.js file*/
 		if($scope.favWarning === null){
-			if(globalFavVars.enableFavWarningBar === 'false' && globalFavVars.enableFavModal === 'false'){
-			favSession.setData('false');
-			$scope.favWarning = favSession.getData();
-		}
-		else {
+
 			favSession.setData('true');
 			$scope.favWarning = favSession.getData();
 		}
-		};
 		/*If the user is a guest then the isLoggedIn variable is set to 'false'*/
 		let rootScope = $scope.$root;
 	  	let uSMS=rootScope.$$childHead.$ctrl.userSessionManagerService;
@@ -114,8 +101,8 @@ angular
 		else {
 			$scope.isLoggedIn = 'true';
 		}
-		/*Set the rootScope view variable depending on session data, if the user is logged in, and if the institution has enabled the functionality*/
-		if($scope.favWarning === 'true' && $scope.isLoggedIn === 'false' && globalFavVars.enableFavModal === 'true'){
+		/*Set the rootScope view variable depending on session data, if the user is logged in*/
+		if($scope.favWarning === 'true' && $scope.isLoggedIn === 'false'){
 			$rootScope.view = true;
 		}
 	
@@ -169,7 +156,7 @@ angular
 		}
 	})
 	};
-})
+}) 
 .component('favOverlay', {  //This component is an element that sits over the favorites icon when the modal warning functionality is enabled.
 	controller: 'prmSaveToFavoritesButtonAfterCtrl',
 	template:'<div>'+
