@@ -20,7 +20,7 @@ The first is similar to the login for complete results warning bar that appears 
 The second warning is a button that appears over the add-to-favorites button when a user isn&#39;t logged in or if the warning has been dismissed.  When this overlay button is clicked a pop-up window appears to warn the user they must be logged in to save favorites lists permanently.  This window also gives the option of logging in or dismissing the warning:
 
 ![Brief record pin icon](./screenshots/pinHover.png)
-![Modal display] (.screenshots/favModal.png)
+![Modal display] (./screenshots/favModal.png)
 System Components
 
 PBO, Package Manager
