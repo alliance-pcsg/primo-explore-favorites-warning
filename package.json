@@ -1,0 +1,29 @@
+{
+  "name": "@orbis-cascade/primo-explore-favorites-warning",
+  "version": "2.0.0",
+  "description": "A package that enables a warning when users try to add an item from Primo to their favorites list without being logged in.  If the user isn't logged in their favorites list won't be permanent.",
+  "main": "primoFavoritesWarningModuleCP.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alliance-pcsg/primo-explore-favorites-warning.git"
+  },
+  "keywords": [
+    "Primo",
+    "Favorites",
+    "Warning",
+    "Ex",
+    "Libris"
+  ],
+  "author": "eoulib",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alliance-pcsg/primo-explore-favorites-warning/issues"
+  },
+  "homepage": "https://github.com/alliance-pcsg/primo-explore-favorites-warning#readme"
+}
