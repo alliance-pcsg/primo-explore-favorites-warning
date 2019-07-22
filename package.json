@@ -1,6 +1,6 @@
 {
   "name": "@orbis-cascade/primo-explore-favorites-warning",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A package that enables a warning when users try to add an item from Primo to their favorites list without being logged in.  If the user isn't logged in their favorites list won't be permanent.",
   "main": "primoFavoritesWarningModuleCP.js",
   "scripts": {
