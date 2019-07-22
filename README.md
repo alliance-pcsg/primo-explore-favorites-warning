@@ -21,7 +21,7 @@ The second warning is a button that appears over the add-to-favorites button whe
 
 ![Brief record pin icon](./screenshots/pinHover.png)
 
-![Modal display] (./screenshots/favModal.png)
+![Modal display](./screenshots/favModal.png)
 
 System Components
 
