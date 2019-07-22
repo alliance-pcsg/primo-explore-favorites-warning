@@ -1,2 +1,2 @@
-require('.js/fav-warning.js') 
+require('./js/fav-warning.js') 
 module.exports = 'showFavoritesWarning'
