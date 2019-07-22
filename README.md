@@ -50,26 +50,35 @@ Implementation
 1. In the PBO, make sure you have the &quot;Inherit Central Package&quot; box checked.
 2. In your local package, in the custom.js file, include the module &#39;showFavoritesWarning&#39; in your app definition. For example:
 
+```js
 var app = angular.module(&#39;viewCustom&#39;, [&#39;showFavoritesWarning&#39;]);
+```
 
 If you are using other angular modules, include them in your app definition as well. For example:
 
+```js
 var app = angular.module(&#39;viewCustom&#39;, [&#39;toggleInstitutions&#39;, &#39;showFavoritesWarning&#39;]);
+```
 
-1. Also in the custom.js file, add the following lines of code **within the anonymous function** (that is, before the closing brackets at the end of the file).
+3. Also in the custom.js file, add the following lines of code **within the anonymous function** (that is, before the closing brackets at the end of the file).
 
 For the warning bar that appears on the My Favorites page:
 
+```js
 app.component(&#39;prmFavoritesToolBarAfter&#39;, {template: &#39;\&lt;show-favorites-warning /\&gt;&#39; });
+```
 
 For the button overlay that calls the favorites warning modal window when clicked:
 
+```js
 app.component(&#39;prmSaveToFavoritesButtonAfter&#39;, {template:&#39;\&lt;fav-overlay /\&gt;&#39;});
+```
 
 By adding those lines you are effectively enabling both warnings.  If you&#39;d like to enable one and not the other, simply omit the one you don&#39;t want from the custom.js file.
 
-1. If you want to customize text associated with warning or to disable a warning, add the following block of code within the anonymous function and edit the values.
+4. If you want to customize text associated with warning or to disable a warning, add the following block of code within the anonymous function and edit the values.
 
+```js
 app.value(&#39;globalFavVars&#39;, {
 
         favWarnBarTxt:&#39;Sign in to make your favorites list permanent&#39;,
@@ -81,9 +90,11 @@ app.value(&#39;globalFavVars&#39;, {
         favWarnModalContentText:&#39;You can create a favorites list as a Guest, but to save a list permanently you must be signed in&#39;,
 
 });
+```
 
-1. In your local package, in the custom1.css file, add the following CSS if you want to customize colors, padding, or text styles:
+5. In your local package, in the custom1.css file, add the following CSS if you want to customize colors, padding, or text styles:
 
+```css
 /\* id for customizing the alert bar on favorites page \*/
 
 #fav-bar {
@@ -129,6 +140,6 @@ app.value(&#39;globalFavVars&#39;, {
         /\*font-size: 10px;\*/
 
 }
-
-1. Zip and upload your package in the PBO.
-2. Deploy your view.
+```
+6. Zip and upload your package in the PBO.
+7. Deploy your view.
