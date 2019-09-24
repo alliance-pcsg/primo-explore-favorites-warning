@@ -65,7 +65,7 @@ var app = angular.module('viewCustom', ['toggleInstitutions', 'showFavoritesWarn
 For the warning bar that appears on the My Favorites page:
 
 ```js
-app.component('prmFavoritesToolBarAfter', {template: <show-favorites-warning />' });
+app.component('prmFavoritesToolBarAfter', {template: '<show-favorites-warning />' });
 ```
 
 For the button overlay that calls the favorites warning modal window when clicked:
