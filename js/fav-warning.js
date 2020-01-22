@@ -120,32 +120,32 @@ template: '<div ng-controller="prmFavoritesToolBarAfterCtrl" id="fav-bar" ng-sho
 				pin[i].addEventListener('click', function(e){
 					$mdDialog.show({
 						 template: '<md-dialog>' +
-										'<md-dialog-content>' +
-												'<md-toolbar id="fav-modal-header">' +
-														'<div class="md-toolbar-tools">' +
-																'<h2 class="flex"><p id="fav-modal-header-text" ng-bind-html="favWarnModalTitleDisplay"></p></h2>' +
-														'</div>' +
-												'</md-toolbar>' +
-												'<div id="fav-modal-content" class="md-dialog-content">' +
-														'<p id="fav-modal-content-text" ng-bind-html="favWarnModalContentDisplay"></p>' +
-														'<p style="text-align: center">' +
-																'<prm-authentication>' +
-																		'<button class="button-with-icon zero-margin md-button md-primoExplore-theme md-ink-ripple" type="button" ng-transclude="">' +
-																				'<prm-icon icon-type="svg" svg-icon-set="primo-ui" icon-definition="sign-in">' +
-																						'<md-icon md-svg-icon="primo-ui:sign-in" alt="" class="md-primoExplore-theme" aria-hidden="true"></md-icon>' +
-																				'</prm-icon>' +
-																				'<span translate="eshelf.signin.title">Sign in</span>' +
-																		'</button>' +
-																'</prm-authentication>' +
-																'<button class="dismiss-alert-button zero-margin md-button md-primoExplore-theme md-ink-ripple button-with-icon" ng-click="favModalClose(); favWarningOnClick()">' +
-																		'<prm-icon icon-type="svg" svg-icon-set="navigation" icon-definition="ic_close_24px">' +
-																				'<md-icon md-svg-icon="navigation:ic_close_24px" alt="" class="md-primoExplore-theme" aria-hidden="true"></md-icon>' +
-																		'</prm-icon>' +
-																		'DISMISS' +
-																'</button></p>' +
-												'</div>' +
-										'</md-dialog-content>' +
-								'</md-dialog>',
+							'<md-dialog-content>' +
+								'<md-toolbar id="fav-modal-header">' +
+									'<div class="md-toolbar-tools">' +
+										'<h2 class="flex"><p id="fav-modal-header-text" ng-bind-html="favWarnModalTitleDisplay"></p></h2>' +
+									'</div>' +
+								'</md-toolbar>' +
+								'<div id="fav-modal-content" class="md-dialog-content">' +
+									'<p id="fav-modal-content-text" ng-bind-html="favWarnModalContentDisplay"></p>' +
+									'<p style="text-align: center">' +
+										'<prm-authentication>' +
+											'<button class="button-with-icon zero-margin md-button md-primoExplore-theme md-ink-ripple" type="button" ng-transclude="">' +
+												'<prm-icon icon-type="svg" svg-icon-set="primo-ui" icon-definition="sign-in">' +
+													'<md-icon md-svg-icon="primo-ui:sign-in" alt="" class="md-primoExplore-theme" aria-hidden="true"></md-icon>' +
+												'</prm-icon>' +
+												'<span translate="eshelf.signin.title">Sign in</span>' +
+											'</button>' +
+										'</prm-authentication>' +
+										'<button class="dismiss-alert-button zero-margin md-button md-primoExplore-theme md-ink-ripple button-with-icon" ng-click="favModalClose(); favWarningOnClick()">' +
+											'<prm-icon icon-type="svg" svg-icon-set="navigation" icon-definition="ic_close_24px">' +
+												'<md-icon md-svg-icon="navigation:ic_close_24px" alt="" class="md-primoExplore-theme" aria-hidden="true"></md-icon>' +
+											'</prm-icon>' +
+											'DISMISS' +
+										'</button></p>' +
+									'</div>' +
+								'</md-dialog-content>' +
+							'</md-dialog>',
 						 parent: angular.element(document.body),
 						 //targetEvent: ev,
 						 clickOutsideToClose: true,
@@ -185,32 +185,32 @@ template: '<div ng-controller="prmFavoritesToolBarAfterCtrl" id="fav-bar" ng-sho
 		//      console.log('it worked!');
 		// 		$mdDialog.show({
 		// 			 template: '<md-dialog>' +
-		// 							'<md-dialog-content>' +
-		// 									'<md-toolbar id="fav-modal-header">' +
-		// 											'<div class="md-toolbar-tools">' +
-		// 													'<h2 class="flex"><p id="fav-modal-header-text" ng-bind-html="favWarnModalTitleDisplay"></p></h2>' +
-		// 											'</div>' +
-		// 									'</md-toolbar>' +
-		// 									'<div id="fav-modal-content" class="md-dialog-content">' +
-		// 											'<p id="fav-modal-content-text" ng-bind-html="favWarnModalContentDisplay"></p>' +
-		// 											'<p style="text-align: center">' +
-		// 													'<prm-authentication>' +
-		// 															'<button class="button-with-icon zero-margin md-button md-primoExplore-theme md-ink-ripple" type="button" ng-transclude="">' +
-		// 																	'<prm-icon icon-type="svg" svg-icon-set="primo-ui" icon-definition="sign-in">' +
-		// 																			'<md-icon md-svg-icon="primo-ui:sign-in" alt="" class="md-primoExplore-theme" aria-hidden="true"></md-icon>' +
-		// 																	'</prm-icon>' +
-		// 																	'<span translate="eshelf.signin.title">Sign in</span>' +
-		// 															'</button>' +
-		// 													'</prm-authentication>' +
-		// 													'<button class="dismiss-alert-button zero-margin md-button md-primoExplore-theme md-ink-ripple button-with-icon" ng-click="favModalClose(); favWarningOnClick()">' +
-		// 															'<prm-icon icon-type="svg" svg-icon-set="navigation" icon-definition="ic_close_24px">' +
-		// 																	'<md-icon md-svg-icon="navigation:ic_close_24px" alt="" class="md-primoExplore-theme" aria-hidden="true"></md-icon>' +
-		// 															'</prm-icon>' +
-		// 															'DISMISS' +
-		// 													'</button></p>' +
-		// 									'</div>' +
-		// 							'</md-dialog-content>' +
-		// 					'</md-dialog>',
+		// 				'<md-dialog-content>' +
+		// 					'<md-toolbar id="fav-modal-header">' +
+		// 						'<div class="md-toolbar-tools">' +
+		// 							'<h2 class="flex"><p id="fav-modal-header-text" ng-bind-html="favWarnModalTitleDisplay"></p></h2>' +
+		// 						'</div>' +
+		// 					'</md-toolbar>' +
+		// 					'<div id="fav-modal-content" class="md-dialog-content">' +
+		// 						'<p id="fav-modal-content-text" ng-bind-html="favWarnModalContentDisplay"></p>' +
+		// 						'<p style="text-align: center">' +
+		// 						'<prm-authentication>' +
+		// 							'<button class="button-with-icon zero-margin md-button md-primoExplore-theme md-ink-ripple" type="button" ng-transclude="">' +
+		// 								'<prm-icon icon-type="svg" svg-icon-set="primo-ui" icon-definition="sign-in">' +
+		// 									<md-icon md-svg-icon="primo-ui:sign-in" alt="" class="md-primoExplore-theme" aria-hidden="true"></md-icon>' +
+		// 								'</prm-icon>' +
+		// 								'<span translate="eshelf.signin.title">Sign in</span>' +
+		// 							'</button>' +
+		// 						'</prm-authentication>' +
+		// 						'<button class="dismiss-alert-button zero-margin md-button md-primoExplore-theme md-ink-ripple button-with-icon" ng-click="favModalClose(); favWarningOnClick()">' +
+		// 							'<prm-icon icon-type="svg" svg-icon-set="navigation" icon-definition="ic_close_24px">' +
+		// 								'<md-icon md-svg-icon="navigation:ic_close_24px" alt="" class="md-primoExplore-theme" aria-hidden="true"></md-icon>' +
+		// 							'</prm-icon>' +
+		// 							'DISMISS' +
+		// 						'</button></p>' +
+		// 					'</div>' +
+		// 				'</md-dialog-content>' +
+		// 			'</md-dialog>',
 		// 			 parent: angular.element(document.body),
 		// 			 //targetEvent: ev,
 		// 			 clickOutsideToClose: true,
