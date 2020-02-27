@@ -61,7 +61,12 @@ var app = angular.module('viewCustom', ['toggleInstitutions', 'showFavoritesWarn
 If your institution uses uses the [Badges Information Modal](https://github.com/alliance-pcsg/primo-explore-favorites-warning) in the Primo Toolkit you will need to hook into the same prmIconAfter compenent as that customization:
 
 ```js
-app.component('prmIconAfter', {template:'<fav-overlay></fav-overlay><badges-modal></badges-modal>'});
+app.component('prmIconAfter', {template:'<badges-modal></badges-modal><fav-overlay></fav-overlay>'});
+```
+
+If your institution does not implement the Badges Information Modal module you can omit it like so:
+```js
+app.component('prmIconAfter', {template:'<fav-overlay />'});
 ```
 
 4. If you want to customize text associated with warning, add the following block of code within the anonymous function and edit the values.
