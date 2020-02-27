@@ -11,13 +11,9 @@ Code Repository
 
 Description
 
-Favorites lists can be created by guest users, but once they end their session that list goes away.  In order to make a favorites list permanent the user needs to login, but Primo has no built in warning to let guest users know this.  This development offers two warnings letting guest users know they need to login if they want to save a favorites list permanently.
+Favorites lists can be created by guest users, but once they end their session that list goes away.  In order to make a favorites list permanent the user needs to login, however Primo has no built in warning to let guest users know this.  This development offers a pop-up up modal that warns users to log in to Primo to save their favorites list permanently.
 
-The first is similar to the login for complete results warning bar that appears in search results list.  The favorites warning has the same functionality but appears on the My Favorites page when users aren't logged in:
-
-![warning bar](./screenshots/FavBar.png)
-
-The second warning is a button that appears over the add-to-favorites button when a user isn't logged in or if the warning has been dismissed.  When this overlay button is clicked a pop-up window appears to warn the user they must be logged in to save favorites lists permanently.  This window also gives the option of logging in or dismissing the warning:
+The warning appears whenever a user clicks on a button with a pin icon and they aren't logged in.  This warning modal gives the option of logging in or dismissing the warning.  Dismissing the warning ensures the modal won't pop up again during the user's current session.
 
 ![Brief record pin icon](./screenshots/pinHover.png)
 
@@ -62,21 +58,13 @@ var app = angular.module('viewCustom', ['toggleInstitutions', 'showFavoritesWarn
 
 3. Also in the custom.js file, add the following lines of code **within the anonymous function** (that is, before the closing brackets at the end of the file).
 
-For the warning bar that appears on the My Favorites page:
+If your institution uses uses the [Badges Information Modal](https://github.com/alliance-pcsg/primo-explore-favorites-warning) in the Primo Toolkit you will need to hook into the same prmIconAfter compenent as that customization:
 
 ```js
-app.component('prmFavoritesToolBarAfter', {template: '<show-favorites-warning />' });
+app.component('prmIconAfter', {template:'<fav-overlay></fav-overlay><badges-modal></badges-modal>'});
 ```
 
-For the button overlay that calls the favorites warning modal window when clicked:
-
-```js
-app.component('prmSaveToFavoritesButtonAfter', {template:'<fav-overlay />'});
-```
-
-By adding those lines you are effectively enabling both warnings.  If you'd like to enable one and not the other, simply omit the one you don't want from the custom.js file.
-
-4. If you want to customize text associated with warning or to disable a warning, add the following block of code within the anonymous function and edit the values.
+4. If you want to customize text associated with warning, add the following block of code within the anonymous function and edit the values.
 
 ```js
 app.value('globalFavVars', {
@@ -84,8 +72,6 @@ app.value('globalFavVars', {
         favWarnBarTxt:'Sign in to make your favorites list permanent',
 
         favWarnModalTitleText: 'Sign in to make your favorites list permanent',
-
-        favWarnModalHoverText:'Add to my favorites';,
 
         favWarnModalContentText:'You can create a favorites list as a Guest, but to save a list permanently you must be signed in';,
 
