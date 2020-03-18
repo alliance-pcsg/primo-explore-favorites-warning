@@ -86,29 +86,29 @@ app.value('globalFavVars', {
 5. In your local package, in the custom1.css file, add the following CSS if you want to customize colors, padding, or text styles:
 
 ```css
-/\* id for customizing the alert bar on favorites page \*/
+/* id for customizing the alert bar on favorites page */
 
 #fav-bar {
 
-        /\*background-color: tomato;\*/
+        /*background-color: tomato;*/
 
 }
 
-/\* id for customizing the text in the fav warning bar on favorites page\*/
+/* id for customizing the text in the fav warning bar on favorites page*/
 
 #fav-bar-text {
 
 }
 
-/\* id for customizing the header box of the fav warning pop-up modal\*/
+/* id for customizing the header box of the fav warning pop-up modal\*/
 
 #fav-modal-header{
 
-        /\*background-color: tomato;\*/
+        /*background-color: tomato;*/
 
 }
 
-/\* id for customizing text and font attributes in fav warning pop-up modal header\*/
+/* id for customizing text and font attributes in fav warning pop-up modal header*/
 
 #fav-modal-header-text {
 
@@ -120,15 +120,15 @@ app.value('globalFavVars', {
 
 #fav-modal-content {
 
-        /\*background-color: tomato;\*/
+        /*background-color: tomato;*/
 
 }
 
-/\* id for customizing modal content text below header\*/
+/* id for customizing modal content text below header*/
 
 #fav-modal-content-text {
 
-        /\*font-size: 10px;\*/
+        /*font-size: 10px;*/
 
 }
 ```
