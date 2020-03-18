@@ -78,7 +78,7 @@ app.value('globalFavVars', {
 
         favWarnModalTitleText: 'Sign in to make your favorites list permanent',
 
-        favWarnModalContentText:'You can create a favorites list as a Guest, but to save a list permanently you must be signed in';,
+        favWarnModalContentText:'You can create a favorites list as a Guest, but to save a list permanently you must be signed in';
 
 });
 ```
